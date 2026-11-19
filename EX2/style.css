@@ -1,0 +1,79 @@
+/* Remove default spacing and set a font */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== Navigation bar (large screens) ===== */
+.navbar {
+  background-color: #333;
+  display: flex;                  /* put items in a row */
+  justify-content: space-between; /* logo left, links right */
+  align-items: center;            /* center vertically */
+  padding: 20px 30px;
+}
+
+.logo {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;  /* remove bullet points */
+  margin: 0;
+  padding: 0;
+  display: flex;     /* links in a row */
+  gap: 25px;         /* space between links */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none; /* remove underline */
+  font-size: 15px;
+}
+
+.nav-links a:hover {
+  color: #ccc;
+}
+
+/* Hide the checkbox and hamburger icon on large screens */
+#menu-toggle,
+.menu-icon {
+  display: none;
+}
+
+/* ===== Small screens (less than 768px) ===== */
+@media (max-width: 767px) {
+
+  .navbar {
+    flex-wrap: wrap; /* let the menu drop to a new line */
+  }
+
+  /* Show the hamburger icon */
+  .menu-icon {
+    display: block;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  /* Hide the links by default and stack them vertically */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 15px;
+    gap: 0;
+  }
+
+  .nav-links li {
+    padding: 12px 0;
+    border-top: 1px solid #555;
+  }
+
+  /* When the checkbox is ticked, show the links */
+  #menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+}

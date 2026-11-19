@@ -1,0 +1,72 @@
+/* ===== Basic setup ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== Mobile layout (default, below 600px) ===== */
+header,
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 16px;
+}
+
+main {
+  display: flex;           /* turn on Flexbox */
+  flex-direction: column;  /* stack items vertically */
+  padding: 10px;
+  gap: 10px;               /* space between content and sidebar */
+}
+
+.content {
+  background-color: #f4f4f4;
+  padding: 15px;
+}
+
+.sidebar {
+  background-color: #ddd;
+  padding: 15px;
+}
+
+/* ===== Medium screens (600px to 900px) ===== */
+@media (min-width: 600px) {
+
+  header,
+  footer {
+    padding: 25px;   /* slightly bigger */
+    font-size: 20px;
+  }
+
+  main {
+    flex-direction: row;  /* side by side */
+  }
+
+  .content {
+    flex: 1;   /* equal width */
+  }
+
+  .sidebar {
+    flex: 1;   /* equal width */
+  }
+}
+
+/* ===== Large screens (900px and wider) ===== */
+@media (min-width: 900px) {
+
+  header,
+  footer {
+    padding: 40px;   /* even more padding */
+    font-size: 26px;
+  }
+
+  .content {
+    flex: 3;   /* content takes more space */
+  }
+
+  .sidebar {
+    flex: 1;   /* sidebar shrinks */
+  }
+}
